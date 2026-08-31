@@ -3,546 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Volupta® - A cinta que veste sua confiança. Modeladora 360º com compressão confortável. Compre 1, Leve 2!">
+    <meta name="theme-color" content="#E91E63">
     <title>Volupta® | A cinta que veste sua confiança</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #8B5CF6;
-            --secondary: #EC4899;
-            --dark: #1F2937;
-            --light: #F9FAFB;
-            --gray: #6B7280;
-            --success: #10B981;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background: #FFFFFF;
-        }
-
-        /* Header Banner */
-        .banner-top {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            text-align: center;
-            padding: 12px 20px;
-            font-weight: 500;
-            animation: slideDown 0.5s ease;
-        }
-
-        @keyframes slideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            color: var(--dark);
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .hero-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .rating {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
-            font-size: 18px;
-        }
-
-        .stars {
-            color: #FCD34D;
-        }
-
-        /* Product Section */
-        .product-section {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .badge {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .product-title {
-            font-size: 28px;
-            color: var(--dark);
-            margin: 20px 0;
-        }
-
-        .product-description {
-            color: var(--gray);
-            margin-bottom: 30px;
-            font-size: 16px;
-        }
-
-        .price-section {
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 30px 0;
-        }
-
-        .original-price {
-            text-decoration: line-through;
-            color: var(--gray);
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .discount {
-            color: var(--secondary);
-            font-weight: 700;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .current-price {
-            font-size: 36px;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .payment-options {
-            color: var(--gray);
-            font-size: 14px;
-            margin-top: 10px;
-        }
-
-        /* Combo Box */
-        .combo-box {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
-            border: 2px solid var(--primary);
-        }
-
-        .combo-box h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-
-        .combo-box p {
-            color: var(--gray);
-            margin-bottom: 15px;
-        }
-
-        .selector-group {
-            margin-bottom: 20px;
-        }
-
-        .selector-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .color-options, .size-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 10px;
-        }
-
-        .option {
-            padding: 12px;
-            border: 2px solid #E5E7EB;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-
-        .option:hover {
-            border-color: var(--primary);
-            background: var(--light);
-        }
-
-        .option.selected {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        /* Benefits Section */
-        .benefits {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 40px 20px;
-        }
-
-        .benefits h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: var(--dark);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .benefit-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .benefit-number {
-            font-size: 48px;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .benefit-card h3 {
-            color: var(--dark);
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .benefit-card p {
-            color: var(--gray);
-            line-height: 1.6;
-        }
-
-        /* Comparison Section */
-        .comparison {
-            background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
-            padding: 60px 20px;
-            margin: 60px 0;
-        }
-
-        .comparison h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: var(--dark);
-        }
-
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        .comparison-image {
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .comparison-image img {
-            width: 100%;
-            display: block;
-        }
-
-        .comparison-text h3 {
-            font-size: 24px;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-
-        .comparison-text p {
-            color: var(--gray);
-            margin-bottom: 15px;
-            line-height: 1.8;
-        }
-
-        /* How to Use Section */
-        .how-to {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 40px 20px;
-        }
-
-        .how-to h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: var(--dark);
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .step {
-            text-align: center;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0 auto 20px;
-        }
-
-        .step h3 {
-            font-size: 18px;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .step p {
-            color: var(--gray);
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background: white;
-            padding: 60px 20px;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: var(--dark);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary);
-            transition: transform 0.3s;
-        }
-
-        .testimonial-card:hover {
-            transform: translateX(5px);
-        }
-
-        .testimonial-stars {
-            color: #FCD34D;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        .testimonial-text {
-            color: var(--gray);
-            margin-bottom: 20px;
-            font-style: italic;
-            line-height: 1.6;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .author-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-        }
-
-        .author-info h4 {
-            color: var(--dark);
-            margin-bottom: 2px;
-        }
-
-        .author-info p {
-            color: var(--gray);
-            font-size: 12px;
-        }
-
-        /* CTA Button */
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 16px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            margin: 20px 0;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
-        }
-
-        .cta-button-secondary {
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .cta-button-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Countdown */
-        .countdown {
-            background: linear-gradient(135deg, var(--secondary) 0%, #F472B6 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 20px 0;
-            font-weight: 600;
-        }
-
-        .countdown-timer {
-            font-size: 24px;
-            font-weight: 700;
-            margin-top: 10px;
-            font-family: 'Courier New', monospace;
-        }
-
-        /* Trust Section */
-        .trust-section {
-            background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
-            padding: 50px 20px;
-            margin: 60px 0;
-        }
-
-        .trust-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ===== HEADER BANNER ===== -->
+    <header class="banner-promo">
+        <p>🚚 FRETE GRÁTIS PARA TODO O BRASIL · OFERTA ESPECIAL POR TEMPO LIMITADO</p>
+    </header>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">VOLUPTA®</div>
+            <div class="nav-links">
+                <a href="#about">Sobre</a>
+                <a href="#benefits">Benefícios</a>
+                <a href="#reviews">Avaliações</a>
+                <a href="#contact">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Modeladora Volupta®</h1>
+                <p class="subtitle">Compre 1, Leve 2</p>
+                <p class="hero-description">Modelagem 360º para barriga, cintura e costas, com compressão confortável para acompanhar sua rotina.</p>
+                
+                <div class="hero-badges">
+                    <span class="badge">⭐ 4,8/5 Avaliações verificadas</span>
+                    <span class="badge">🏆 Mais vendida</span>
+                    <span class="badge">🚚 Envio nacional</span>
+                    <span class="badge">✓ Garantia de 60 dias</span>
+                </div>
+
+                <div class="price-section">
+                    <div class="discount-badge">57% OFF</div>
+                    <div class="price-container">
+                        <span class="price-old">R$ 299,80</span>
+                        <span class="price-current">R$ 129,90</span>
+                        <span class="price-method">no Pix</span>
+                    </div>
+                    <p class="price-info">ou R$ 159,90 no cartão ou boleto · até 12x de R$ 13,33</p>
+                </div>
+
+                <a href="#purchase" class="btn-primary">COMPRAR AGORA</a>
+            </div>
+
+            <div class="hero-images">
+                <img src="images/modeladora-preto.jpg" alt="Modeladora Volupta® preta">
+                <img src="images/modeladora-bege.jpg" alt="Modeladora Volupta® bege">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PURCHASE SECTION ===== -->
+    <section id="purchase" class="purchase-section">
+        <div class="purchase-container">
+            <h2>Escolha sua combinação</h2>
+            
+            <div class="offer-box">
+                <img src="images/oferta-aniversario.jpg" alt="Oferta Compre 1 Leve 2" class="offer-image">
+                
+                <div class="combo-options">
+                    <div class="combo-option" data-combo="bege-preto">
+                        <input type="radio" id="combo1" name="combo" value="bege-preto" checked>
+                        <label for="combo1">
+                            <div class="color-preview">
+                                <div class="color-bege"></div>
+                                <div class="color-preto"></div>
+                            </div>
+                            <span>Bege + Preto</span>
+                        </label>
+                    </div>
+
+                    <div class="combo-option" data-combo="bege-bege">
+                        <input type="radio" id="combo2" name="combo" value="bege-bege">
+                        <label for="combo2">
+                            <div class="color-preview">
+                                <div class="color-bege"></div>
+                                <div class="color-bege"></div>
+                            </div>
+                            <span>Bege + Bege</span>
+                        </label>
+                    </div>
+
+                    <div class="combo-option" data-combo="preto-preto">
+                        <input type="radio" id="combo3" name="combo" value="preto-preto">
+                        <label for="combo3">
+                            <div class="color-preview">
+                                <div class="color-preto"></div>
+                                <div class="color-preto"></div>
+                            </div>
+                            <span>Preto + Preto</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="size-section">
+                    <h3>Escolha seu tamanho</h3>
+                    <div class="size-options">
+                        <label class="size-option">
+                            <input type="radio" name="size" value="P" checked>
+                            <span>P</span>
+                        </label>
+                        <label class="size-option">
+                            <input type="radio" name="size" value="M">
+                            <span>M</span>
+                        </label>
+                        <label class="size-option">
+                            <input type="radio" name="size" value="G">
+                            <span>G</span>
+                        </label>
+                        <label class="size-option">
+                            <input type="radio" name="size" value="GG">
+                            <span>GG</span>
+                        </label>
+                    </div>
+                    <a href="#" class="size-guide">Qual é o meu tamanho?</a>
+                </div>
+
+                <div class="shipping-info">
+                    <p><strong>📦 Envio Nacional</strong> · Frete grátis para todo o Brasil</p>
+                </div>
+
+                <button class="btn-primary btn-large">COMPRAR AGORA</button>
+
+                <div class="trust-badges">
+                    <div class="trust-badge">✓ Compra segura</div>
+                    <div class="trust-badge">🔒 Pagamento protegido</div>
+                    <div class="trust-badge">🚚 Envio para todo o Brasil</div>
+                    <div class="trust-badge">↩️ Devolução gratuita</div>
+                    <div class="trust-badge">⏱️ 60 dias de garantia</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BENEFITS SECTION ===== -->
+    <section id="benefits" class="benefits">
+        <h2>Uma peça. Quatro benefícios.</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🔄</div>
+                <h3>Compressão 360º</h3>
+                <p>Modela barriga, cintura e costas de forma uniforme.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💪</div>
+                <h3>Mais firmeza</h3>
+                <p>A estrutura ajuda a manter a peça posicionada durante o uso.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">☁️</div>
+                <h3>Conforto</h3>
+                <p>Tecido pensado para acompanhar a rotina sem sensação excessiva de aperto.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">✨</div>
+                <h3>Silhueta valorizada</h3>
+                <p>Ajuda a criar uma aparência mais uniforme sob diferentes tipos de roupa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BEFORE & AFTER ===== -->
+    <section class="before-after">
+        <h2>Veja a diferença no caimento.</h2>
+        <p class="subtitle-section">Uma modeladora pensada para vestir melhor, sem transformar seu corpo em outra pessoa.</p>
+        
+        <div class="before-after-container">
+            <div class="comparison-item">
+                <img src="images/antes-depois-frente.jpg" alt="Comparação frente">
+                <p><strong>Frente</strong> — caimento mais uniforme na cintura e barriga.</p>
+            </div>
+            <div class="comparison-item">
+                <img src="images/antes-depois-costas.jpg" alt="Comparação costas">
+                <p><strong>Costas</strong> — menos marcas sob a roupa.</p>
+            </div>
+        </div>
+        <p class="disclaimer">Imagens de uso com peça vestida. Resultados de caimento variam conforme corpo, tamanho e roupa.</p>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="how-it-works">
+        <h2>Como funciona</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Vista</h3>
+                <p>Suba a peça até a cintura alta, sem dobrar o cós.</p>
+            </div>
+
+            <div class="step-arrow">→</div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>Ajuste</h3>
+                <p>Alinhe as laterais e acomode o tecido no corpo.</p>
+            </div>
+
+            <div class="step-arrow">→</div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>Siga o dia</h3>
+                <p>Vista sua roupa e siga o dia com liberdade.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REVIEWS SECTION ===== -->
+    <section id="reviews" class="reviews">
+        <h2>Quem ama Volupta ⭐</h2>
+        <p class="subtitle-section">Experiências de mulheres que escolheram a Volupta para acompanhar sua rotina.</p>
+
+        <div class="stats-container">
+            <div class="stat">
+                <div class="stat-number">2.847</div>
+                <div class="stat-label">Avaliações verificadas</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">18.932</div>
+                <div class="stat-label">Peças enviadas</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">4,8/5</div>
+                <div class="stat-label">Nota média</div>
+            </div>
+        </div>
+
+        <div class="reviews-carousel">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">MA</div>
+                    <div class="review-info">
+                        <strong>Mariana Alves</strong>
+                        <p>São Paulo — SP</p>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">"Gostei muito da modelagem. A peça ficou bem ajustada no meu corpo e por baixo da roupa praticamente não aparece. O que mais gostei foi poder usar durante o dia sem ficar pensando nela o tempo todo."</p>
+                <p class="verified">✓ Comentário verificado pelo Google</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">CR</div>
+                    <div class="review-info">
+                        <strong>Camila Rodrigues</strong>
+                        <p>Belo Horizonte — MG</p>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">"Foi a primeira cinta que comprei e fiquei surpresa com o caimento. Escolhi meu tamanho seguindo o guia e ficou bem confortável. Principalmente com vestidos e roupas mais justas, gostei bastante do resultado."</p>
+                <p class="verified">✓ Comentário verificado pelo Google</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">JM</div>
+                    <div class="review-info">
+                        <strong>Juliana Martins</strong>
+                        <p>Rio de Janeiro — RJ</p>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">"Comprei a combinação preta e bege e achei muito prática. A preta virou minha favorita para usar com roupas escuras. Gostei bastante da firmeza e do acabamento."</p>
+                <p class="verified">✓ Comentário verificado pelo Google</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">FO</div>
+                    <div class="review-info">
+                        <strong>Fernanda Oliveira</strong>
+                        <p>Curitiba — PR</p>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">"O que mais me chamou atenção foi que ela fica bem posicionada enquanto estou sentada ou andando. Para mim isso fez bastante diferença em comparação com outras peças que já tinha usado."</p>
+                <p class="verified">✓ Comentário verificado pelo Google</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">AS</div>
+                    <div class="review-info">
+                        <strong>Aline Santos</strong>
+                        <p>Salvador — BA</p>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">"Adorei a experiência. A peça deixa a roupa com um caimento muito mais bonito e me senti bem mais confiante usando algumas roupas que estavam paradas no armário."</p>
+                <p class="verified">✓ Comentário verificado pelo Google</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">PC</div>
+                    <div class="review-info">
+                        <strong>Patrícia Costa</strong>
+                        <p>Brasília — DF</p>
+                    </div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                
